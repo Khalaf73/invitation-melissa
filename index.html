@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Une invitation pour Melissa</title>
+  <meta name="description" content="Une petite invitation à deux." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient"></div>
+  <div class="grain"></div>
+
+  <section id="intro" class="intro" aria-label="Introduction">
+    <p class="intro-line line-1">Parfois...</p>
+    <p class="intro-line line-2">les plus belles journées...</p>
+    <p class="intro-line line-3">commencent par une simple invitation.</p>
+  </section>
+
+  <main id="app" class="app" aria-live="polite">
+    <section class="hero card reveal">
+      <p class="eyebrow">Pour Melissa</p>
+      <h1>Une petite invitation...</h1>
+      <p class="subtitle">Sans pression. Juste une parenthèse douce, si tu en as envie.</p>
+      <img src="assets/invitation.png" alt="Invitation pour une journée au lac" class="poster" />
+    </section>
+
+    <section class="message card reveal delay-1">
+      <p>Salut Melissa <span aria-hidden="true">❤️</span></p>
+      <p>Je ne veux pas te mettre la pression.</p>
+      <p>J'avais juste envie de te proposer un moment simple, doux, et loin du bruit, pour profiter, respirer, sourire, et peut-être se retrouver un peu.</p>
+    </section>
+
+    <section class="program reveal delay-2" aria-label="Programme de la sortie">
+      <h2>Au programme</h2>
+      <div class="tickets">
+        <article class="ticket"><span>🏄</span><div><strong>Paddle sur le lac</strong><small>Un moment calme, dehors, juste à deux.</small></div></article>
+        <article class="ticket"><span>🧺</span><div><strong>Pique-nique sur l'eau</strong><small>Un truc simple, préparé avec attention.</small></div></article>
+        <article class="ticket"><span>🚶</span><div><strong>Petite balade</strong><small>Marcher un peu, respirer, discuter ou juste profiter.</small></div></article>
+        <article class="ticket"><span>🍦</span><div><strong>Glace ou verre en terrasse</strong><small>Finir tranquillement, sans se presser.</small></div></article>
+      </div>
+    </section>
+
+    <section class="note card reveal delay-3">
+      <p>Je comprendrais totalement si tu n'en as pas envie.</p>
+      <p>Mais si une partie de toi aimerait partager cette journée...</p>
+      <p><strong>alors cette invitation est pour toi.</strong></p>
+    </section>
+
+    <section class="reply card reveal delay-4" id="reponse">
+      <h2>Alors, tu viens ?</h2>
+      <p class="reply-subtitle">Un clic suffit, je recevrai ta réponse directement.</p>
+
+      <form id="invitationForm" action="https://formspree.io/f/xeebdlwz" method="POST">
+        <input type="hidden" name="Invitation" value="Balade en paddle + pique-nique sur le lac" />
+        <input type="hidden" id="choiceInput" name="Réponse" value="" />
+        <input type="hidden" id="dateInput" name="Date" value="" />
+        <input type="hidden" name="Pour" value="Melissa" />
+        <input type="hidden" name="_subject" value="Nouvelle réponse à l'invitation" />
+
+        <button type="button" class="btn primary" data-choice="J'ai envie de partager cette journée avec toi ❤️">
+          J'ai envie de partager cette journée avec toi ❤️
+        </button>
+        <button type="button" class="btn secondary" data-choice="J'aimerais qu'on en parle avant 🤍">
+          J'aimerais qu'on en parle avant 🤍
+        </button>
+      </form>
+
+      <div id="thankYou" class="thank-you" hidden>
+        <div class="heart">❤️</div>
+        <h2>Merci</h2>
+        <p>Quelle que soit ta réponse, merci d'avoir pris le temps de lire cette invitation.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
